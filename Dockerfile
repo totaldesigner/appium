@@ -44,7 +44,7 @@ RUN echo y | android update sdk --all --force --no-ui --filter ${ANDROID_COMPONE
 #===================
 # Nodejs and Appium
 #===================
-ENV APPIUM_VERSION 1.5.0
+ENV APPIUM_VERSION 1.5.3
 RUN apt-get update -qqy \
   && apt-get -qqy --no-install-recommends install \
     nodejs \
@@ -52,8 +52,8 @@ RUN apt-get update -qqy \
   && ln -s /usr/bin/nodejs /usr/bin/node \
   && npm install -g appium@$APPIUM_VERSION \
   && npm cache clean \
-  && npm install -g n \
-  && n stable \
+#  && npm install -g n \
+#  && n stable \
   && apt-get remove --purge -y npm \
   && apt-get autoremove --purge -y \
   && rm -rf /var/lib/apt/lists/*
