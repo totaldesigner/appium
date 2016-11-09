@@ -52,6 +52,8 @@ RUN apt-get update -qqy \
   && ln -s /usr/bin/nodejs /usr/bin/node \
   && npm install -g appium@$APPIUM_VERSION \
   && npm cache clean \
+  && npm install -g n \
+  && n stable \
   && apt-get remove --purge -y npm \
   && apt-get autoremove --purge -y \
   && rm -rf /var/lib/apt/lists/*
