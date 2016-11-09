@@ -13,7 +13,7 @@ How to use this image
 Launch the image with *--privileged* option to allow docker instance to view connected USB devices:
 
 ``` bash
-$ docker run -d -P -p 4723:4723 --privileged -v /dev/bus/usb:/dev/bus/usb --name appium totaldesigner/appium
+$ docker run -d -p 4723:4723 --privileged -v /dev/bus/usb:/dev/bus/usb --name appium totaldesigner/appium
 ```
 
 #### Run Appium tests
